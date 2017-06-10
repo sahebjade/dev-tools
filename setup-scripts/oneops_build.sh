@@ -58,13 +58,13 @@ export OODB_PASSWORD=kloopz
 cd $OO_HOME
 
 source $OO_HOME/deploy_display.sh
-
+cd $OO_HOME
 source $OO_HOME/deploy_amq.sh
-
+cd $OO_HOME
 source $OO_HOME/deploy_java.sh
-
+cd $OO_HOME
 source $OO_HOME/deploy_search.sh
-
+cd $OO_HOME
 source $OO_HOME/deploy_ooadmin.sh
 
 cd /opt/oneops
