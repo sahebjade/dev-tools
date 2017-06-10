@@ -21,7 +21,7 @@ service cassandra stop
 
 cd "$OO_SRC_HOME"
 rm -rf oneops
-git clone https://github.com/oneops/oneops.git
+git clone "$GITHUB_URL"/oneops
 cd oneops
 # Add validation
 git checkout  release-"$@"
