@@ -1,6 +1,7 @@
 #!/bin/sh
 
-source setenv.sh
+source ./setenv.sh
+
 
 mkdir -p "$OO_SRC_HOME"
 

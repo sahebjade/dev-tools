@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source setenv.sh
+source ./setenv.sh
 echo "Deploying AMQ plugin: $now "
 cd $ONE_OPS_DISTR/oneops/dist
 tar -xvf  $ONE_OPS_DISTR/oneops/dist/oneops-amq-plugin-"$@".tar.gz

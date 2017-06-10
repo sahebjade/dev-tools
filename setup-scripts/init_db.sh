@@ -1,7 +1,8 @@
 #!/bin/sh
 
 echo "Initializing DB.."
-source setenv.sh
+source ./setenv.sh
+
 
 cd $ONE_OPS_DISTR/oneops/dist
 tar -xzvf oneops-db-schema-"$@".tar.gz
