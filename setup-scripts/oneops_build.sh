@@ -49,13 +49,14 @@ echo "Completed git build : $now"
 echo "Starting services after build before deploy"
 service cassandra start
 
+cd "$ONE_OPS_DISTR/"
+tar -xzvf distribution-"$@"-archive.tar.gz
+
 source $OO_HOME/init_db.sh
 
 now=$(date +"%T")
 echo "Deploying artifacts: $now "
 
-cd "$ONE_OPS_DISTR/"
-tar -xzvf distribution-"$@"-archive.tar.gz
 
 
 cd $OO_HOME
