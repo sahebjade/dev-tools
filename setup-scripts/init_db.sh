@@ -12,7 +12,7 @@ cp $ONE_OPS_DISTR/oneops/dist/oneops/dist/single_db_schemas.sql /var/lib/pgsql/s
 
 cd /var/lib/pgsql
 su postgres -c 'psql -f /var/lib/pgsql/single_db_schemas.sql'
-cd $ONE_OPS_DISTR/dist/oneops/dist
+cd $ONE_OPS_DISTR/oneops/dist/oneops/dist
 ./single_db_install.sh
 
 #

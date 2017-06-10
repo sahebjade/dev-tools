@@ -55,6 +55,8 @@ export RAILS_ENV=development
 export OODB_USERNAME=kloopz
 export OODB_PASSWORD=kloopz
 
+cd $OO_HOME
+
 source $OO_HOME/deploy_display.sh
 
 source $OO_HOME/deploy_amq.sh
