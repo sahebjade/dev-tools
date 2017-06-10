@@ -3,6 +3,8 @@
 export BUILD_BASE='/home/oneops/build'
 export OO_HOME='/home/oneops'
 export OO_SRC_HOME='/mnt/oneops/src/'
+#export OO_DIST_HOME='/mnt/oneops/src/'
+export ONE_OPS_DISTR=$OO_SRC_HOME/oneops/oneops-distribution/target/
 export SEARCH_SITE=localhost
 export GITHUB_URL='https://github.com/oneops/oneops'
 export GITHUB_CIRCUIT_URL=git@gecgit:walmartlabs
@@ -41,7 +43,7 @@ fi
 
 
 now=$(date +"%T")
-#echo "Completed git build : $now"
+echo "Completed git build : $now"
 
 
 echo "Starting services after build before deploy"
@@ -52,8 +54,9 @@ source $OO_HOME/init_db.sh
 now=$(date +"%T")
 echo "Deploying artifacts: $now "
 
-cd $OO_HOME/dist
-tar -xzvf oneops-continuous.tar.gz
+cd "$ONE_OPS_DISTR/"
+tar -xzvf distribution-"$@"-archive.tar.gz
+
 
 cd $OO_HOME
 

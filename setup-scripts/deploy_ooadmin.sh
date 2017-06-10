@@ -2,7 +2,7 @@
 
 echo "Deploying OneOps Admin "
 cd $ONE_OPS_DISTR/oneops/dist/
-tar -xvf oneops-admin-"@".tar.gz
+tar -xvf oneops-admin-"$@".tar.gz
 gem install  $OO_HOME/oneops/dist/oneops/dist/oneops-admin-1.0.0.gem --no-ri --no-rdoc
 
 mkdir -p /opt/oneops-admin

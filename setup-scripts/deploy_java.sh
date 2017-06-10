@@ -24,7 +24,7 @@ wars=( adapter antenna cms-admin controller daq-api opamp sensor transistor tran
 for war in "${wars[@]}"
 do
  cd $ONE_OPS_DISTR/oneops/dist/
- tar -xvf oneops-$war_package-"@".tar.gz
+ tar -xvf oneops-$war_package-"$@".tar.gz
  cp $ONE_OPS_DISTR/oneops/dist/oneops/dist/$war_package* /usr/local/tomcat7/webapps/$war_package.war
 done
 
