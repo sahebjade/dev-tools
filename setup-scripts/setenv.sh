@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+export BUILD_BASE='/home/oneops/build'
+export OO_HOME='/home/oneops'
+export OO_SRC_HOME='/mnt/oneops/src/'
+#export OO_DIST_HOME='/mnt/oneops/src/'
+export ONE_OPS_DISTR=$OO_SRC_HOME/oneops/oneops-distribution/target
+export SEARCH_SITE=localhost
+export GITHUB_URL='https://github.com/oneops/oneops'
+export GITHUB_CIRCUIT_URL=git@gecgit:walmartlabs

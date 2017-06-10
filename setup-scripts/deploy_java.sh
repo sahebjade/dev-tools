@@ -1,5 +1,5 @@
 #!/bin/sh
-
+source setenv.sh
 now=$(date +"%T")
 
 echo "Deploying Tomcat web apps: $now "

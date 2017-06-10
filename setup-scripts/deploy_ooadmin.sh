@@ -1,5 +1,5 @@
 #!/bin/sh
-
+source setenv.sh
 echo "Deploying OneOps Admin "
 cd $ONE_OPS_DISTR/oneops/dist/
 tar -xvf oneops-admin-"$@".tar.gz

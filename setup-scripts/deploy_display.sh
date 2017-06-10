@@ -1,6 +1,6 @@
 #!/bin/sh
 
-
+source setenv.sh
 echo "Deploying Display component: $now "
 
 mkdir -p /opt/oneops
