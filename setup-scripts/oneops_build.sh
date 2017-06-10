@@ -30,7 +30,7 @@ rm -rf oneops
 git clone https://github.com/oneops/oneops.git
 cd oneops
 # Add validation
-git checkout  "$@"
+git checkout  release-"$@"
 # Do a build right now , we can pull the artifacts from central once they are there
 # change the directory
 
