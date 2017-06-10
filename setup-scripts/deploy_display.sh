@@ -5,7 +5,7 @@ echo "Deploying Display component: $now "
 
 mkdir -p /opt/oneops
 
-mv $OO_HOME/dist/oneops/dist/app.tar.gz /opt/oneops/app.tar.gz
+mv $ONE_OPS_DISTR/oneops/dist/oneops-display-"@".tar.gz /opt/oneops/app.tar.gz
 
 cd /opt/oneops
 

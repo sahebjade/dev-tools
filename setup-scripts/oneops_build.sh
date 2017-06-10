@@ -2,9 +2,12 @@
 
 export BUILD_BASE='/home/oneops/build'
 export OO_HOME='/home/oneops'
+export OO_SRC_HOME='/mnt/oneops/src/'
 export SEARCH_SITE=localhost
-export GITHUB_URL='https://github.com/oneops'
+export GITHUB_URL='https://github.com/oneops/oneops'
 export GITHUB_CIRCUIT_URL=git@gecgit:walmartlabs
+
+mkdir -p "$OO_SRC_HOME"
 
 now=$(date +"%T")
 echo "Starting at : $now"
@@ -12,14 +15,34 @@ echo "Starting at : $now"
 echo "Stopping services to free up memory for build"
 service cassandra stop
 
-$OO_HOME/install_build_srvr.sh "$@"
+#DONT NEED  A BUILD SERVER
+#$OO_HOME/install_build_srvr.sh "$@"
+#
+#if [ $? -ne 0 ]; then
+#	exit 1;
+#fi
+##END build server
+
+cd "$OO_SRC_HOME"
+rm -rf oneops
+git clone https://github.com/oneops/oneops.git
+cd oneops
+# Add validation
+git checkout tag "$@"
+# Do a build right now , we can pull the artifacts from central once they are there
+# change the directory
+
+# skip test for time being
+./mvnw clean package -Dmaven.test.skip=true
 
 if [ $? -ne 0 ]; then
-	exit 1;
+  exit 1;
 fi
 
+
 now=$(date +"%T")
-echo "Completed git build : $now"
+#echo "Completed git build : $now"
+
 
 echo "Starting services after build before deploy"
 service cassandra start

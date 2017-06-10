@@ -2,9 +2,11 @@
 
 
 echo "Deploying AMQ plugin: $now "
+cd $ONE_OPS_DISTR/oneops/dist
+tar -xvf  $ONE_OPS_DISTR/oneops/dist/oneops-amq-plugin-"$@".tar.gz
+cp $OO_HOME/oneops/dist/oneops/dist/amq-config.tar.gz  /opt/activemq/amq-config.tar.gz
 
-cp $OO_HOME/dist/oneops/dist/amq-config.tar.gz  /opt/activemq/amq-config.tar.gz 
-cp $OO_HOME/dist/oneops/dist/amqplugin-fat.jar  /opt/activemq/lib/amqplugin-fat.jar
+cp $ONE_OPS_DISTR/oneops/dist/oneops/dist/amqplugin-fat.jar  /opt/activemq/lib/amqplugin-fat.jar
 
 cd /opt/activemq
 
