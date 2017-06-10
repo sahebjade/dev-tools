@@ -45,15 +45,11 @@ service cassandra start
 
 cd "$ONE_OPS_DISTR/"
 tar -xzvf distribution-"$@"-archive.tar.gz
-
+cd $OO_HOME
 source $OO_HOME/init_db.sh
 
 now=$(date +"%T")
 echo "Deploying artifacts: $now "
-
-
-
-cd $OO_HOME
 
 export RAILS_ENV=development
 export OODB_USERNAME=kloopz
