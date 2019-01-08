@@ -15,15 +15,8 @@ circuit init
 
 cd "$BUILD_BASE"
 
-if [ -d "$BUILD_BASE/circuit-oneops-1" ]; then
-  echo "doing git pull on circuit-oneops-1"
-  cd "$BUILD_BASE/circuit-oneops-1"
-  git pull
-else
-  echo "doing git clone"
-  git clone "$GITHUB_URL/circuit-oneops-1.git"
-fi
-sleep 2
+cp -R /tmp/oneops_circuits/circuit-oneops-1 /home/oneops/build/
+
 
 cd "$BUILD_BASE/circuit-oneops-1"
 circuit install
